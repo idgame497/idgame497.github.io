@@ -1,5 +1,676 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
+<head>
+	<meta charset="utf-8">
+	<link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+	<meta name="viewport" content="width=device-witdh, initial-scale=1.0">
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<title>IdGame</title>
+	<style type="text/css">
+
+	/*== variabel css == */
+:root{
+	--header-height: 3rem;
+	--font-semi: 600;
+}
+
+/* colores ==*/
+:root{
+	--firs-color: #4070F4;
+	--second-color:#0E2431;
+}
+
+
+/* FUENTE Y TIPOGRAFIA */
+:root{
+	--body-font:'Poppins', sans-serif;
+	--big-font-size: 2rem;
+	--h2-font-size: 1.25rem;
+	--normal-font-size: 0.938rem;
+}
+@media screen and (min-width: 768px){
+	:root{
+	--big-font-size: 3.5rem;
+	--h2-font-size: 2rem;
+	--normal-font-size: 1rem;
+	}
+}
+/* margenes == */
+:root{
+	--mb-1: 0.5rem;
+	--mb-2: 1rem;
+	--mb-3: 1.5rem;
+	--mb-4: 2rem;
+	--mb-5: 2.5rem;
+	--mb-6: 3rem;
+}
+/* z index */
+:root{
+	--z-back: -10; 
+	--z-normal: 1;
+	--z-tooltip: 10;
+	--z-fixed: 100;
+}
+
+/* base */
+*,::before,::after{
+	box-sizing: border-box;
+}
+.section-title{
+	position: relative;
+	font-size: 1.2rem;
+	color: #000;
+	margin-top: var(--mb-2);
+	margin-bottom: var(--mb-5);
+	text-align: center;
+}
+.section-title::after{
+	position: absolute;
+	content: "";
+	width: 64px;
+	height: 0.18rem;
+	left: 0;
+	right: 0;
+	margin: auto;
+	display: inline-block;
+	top: 2rem;
+	
+
+}
+.section{
+	padding-top: 3rem;
+	padding-bottom: 2rem;
+}
+
+.bd-grid{
+	max-width: 1024px;
+	display: grid;
+	grid-template-columns: 100%; 
+	grid-column-gap: 2rem;
+	width: calc(100% - 2rem);
+	margin-left: var(--mb-2);
+	margin-right: var(--mb-2);
+}
+.about_container{
+	grid-row-gap: 2rem;
+	text-align: center;
+	transition: 3s;
+}
+.about_subtitle{
+	margin-bottom: var(--mb-2);
+	transition: 3s;
+}
+.about_img{
+	margin: auto;
+	transition: 1.7s;
+}
+.about_img img{
+	width: 200px;
+	border-radius: .5rem;
+	transition: 1s;
+}
+.contact_container{
+    grid-row-gap: 2rem;
+    transition: 3s;
+}
+.contact_subtitle{
+    margin-bottom: var(--mb-2);
+    transition: 3s;
+}
+.contact_img{
+    margin: auto;
+    transition: 1.7s;
+}
+.contact_img img{
+    width: 300px;
+    border-radius: .5rem;
+    transition: 1s;
+}
+.contact_icon{
+    font-size: 2.1rem;
+    
+}
+.contact_icon a{
+    color: #000;
+}
+.contact_icon a:hover{
+    color: #FF6347;
+    transition: 1.2s;
+}
+@media screen and (max-width: 768px){
+	.navbar{
+	height: var(--header-height);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: var(--font-semi);
+	width: 100%;
+	background-color: #fff;
+	right: 0;
+	left: 0;
+	
+}
+.navbar ul {
+		position: fixed;
+		top: var(--header-height);
+		right: 0;
+		width: 80%;
+		height: 100%;
+		padding: 2rem;
+		background-image:url(tenor.gif);
+		transition: .5s;
+		color: #fff;
+		display: none;
+
+			
+	}
+
+	.navbar ul li{
+		list-style-type: none;
+	}
+	.navbar ul li a{
+		position: relative;
+		color: #fff;
+		font-size: 1.1rem;
+		
+	}
+	.nav_item{
+	margin-bottom: var(--mb-4);
+}
+.toggle{
+	background-color: #fff;
+	border: 1px solid #fff;
+	font-size: 1.3rem;
+}
+.card5{
+		width: 100px;
+		border: 1px solid #fff;
+         margin: auto;
+         margin-bottom: 30px;
+        background-color: #F8F8FF;
+	}
+.card1{
+        width: 100px;
+        border: 1px solid #fff;
+         margin: auto;
+         margin-bottom: 30px;
+      
+    }
+    .card2{
+        width: 100px;
+        border: 1px solid #fff;
+         margin: auto;
+         margin-bottom: 20px;
+         background-color: #fff;
+    }
+    .card3{
+        width: 100px;
+        border: 1px solid #fff;
+         margin: auto;
+         margin-bottom: 20px;
+        background-color: #fff;
+    }
+    .card4{
+        width: 100px;
+        border: 1px solid #fff;
+         margin: auto;
+         margin-bottom: 30px;
+         background-color: #fff;
+    }
+    .galery{
+    box-shadow: 0 4px 20px rgba(14,36,49,.15);
+    border-radius: .5rem;
+    overflow: hidden;
+    transition: 1s;
+}
+    .galery img{
+    
+    cursor: pointer;
+    transition: 1s;
+}
+    .galery img:hover{
+    transform: scale(1.3);
+}
+ #icon:hover{
+       color:  #FF6347;
+    }
+    
+
+}
+@media screen and (min-width: 768px){
+	head{
+		bottom: 100px;
+	}
+	.navbar{
+	position: fixed;
+	width:100%;
+	background-color: #fff;
+
+	}
+	.navbar ul li{
+		display: inline-block;
+		margin-left: 20px;
+		margin-right: 10px;
+	}
+	.navbar ul li a{
+		color: #000;
+	}
+	.navbar ul li .dropdown{
+		display: none;
+	}
+	.navbar ul li:hover .dropdown{
+		display: block;
+		background-color: #fff;
+		position: absolute;
+		padding: 10px;
+	}
+	.toggle{
+		display: none;
+	}
+	.about_container {
+		grid-template-columns: repeat(2,1fr);
+		align-items: center;
+		text-align: initial;
+		transition: 1s;
+	}
+	.about_img img{
+		width: 400px;
+		transition: 1s;
+	}
+    .contact_container {
+        grid-template-columns: repeat(2,1fr);
+        align-items: center;
+        text-align: initial;
+        transition: 1s;
+    }
+    .contact_img img{
+        width: 400px;
+        transition: 1s;
+        margin-left: 140px;
+    }
+    .contact_text{
+        margin-left: 70px;
+    }
+    .contact_subtitle{
+        margin-left: 70px;
+    }
+	.section{
+		padding-top: 4rem;
+		padding-bottom: 3rem;
+	}
+	.section-title{
+		margin-bottom: var(--mb-6);
+
+	}
+	.section-title::after{
+		width: 100px;
+		top: 3rem;
+	}
+	.section{
+		padding-top: 4rem;
+		padding-bottom: 3rem;
+	}
+	.section-title{
+		margin-bottom: var(--mb-6);
+
+	}
+	.section-title::after{
+		width: 100px;
+		top: 3rem;
+	}
+	.card5{
+		width: 100px;
+		border: 1px solid #fff;
+	}
+    .card5{
+        width: 100px;
+        border: 1px solid #fff;
+        display: inline-block;
+         margin-bottom: 20px;
+         margin: 140px;
+          background-color: #F8F8FF;
+          margin-left: 217px;
+
+    }
+    .card1{
+        width: 100px;
+        border: 1px solid #fff;
+         display: inline-block;
+         margin-bottom: 50px;
+          margin: 100px;
+            margin-right: 10px;
+            margin-left: 90px;
+
+
+    }
+    .card2{
+        width: 100px;
+        border: 1px solid #fff;
+         display: inline-block;
+         margin-bottom: 50px;
+          margin: 70px;
+           background-color: #fff;
+
+    }
+    .card3{
+        width: 100px;
+        border: 1px solid #fff;
+         display: inline-block;
+         margin-bottom: 50px;
+          margin: 70px;
+           background-color: #fff;
+
+    }
+    .card4{
+        width: 100px;
+        border: 1px solid #fff;
+         display: inline-block;
+         margin-bottom: 50px;
+          margin: 30px;
+          background-color: #fff;
+
+    }
+    .galery{
+    box-shadow: 0 4px 20px rgba(14,36,49,.15);
+    border-radius: .5rem;
+    overflow: hidden;
+    transition: 1s;
+}
+    .galery img{
+    
+    cursor: pointer;
+    transition: 1s;
+}
+    .galery img:hover{
+    transform: scale(1.3);
+}
+
+.contact_icon{
+    font-size: 2.1rem;
+    margin-left: 70px;
+}
+.list1{
+   padding: 35px;
+}
+.list2{
+    padding: 35px;
+}
+.footer_img{
+    padding: 50px;
+    margin-bottom: 10px;
+}
+.footer2{
+    padding: 30px;
+    font-size: 1.1rem;
+}
+}
+		
+	#BtnTop {
+        position: fixed;
+        float: left;
+        right: 1%;
+        border: 20px;
+        border-radius: 20px;
+        font-size: 1.5rem;
+        bottom: 3%;
+    }
+    #BtnTop > a {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        padding: 2px 10px 2px 10px;
+    }
+    
+    .we_do{
+       background-color:  #F8F8FF;
+    }
+    .contact{
+        background-color:  #F8F8FF;
+    }
+    .do{
+      background-color:  #F8F8FF;  
+    }
+ .footer1{
+    background-color:var(--second-color);
+    color: #fff;
+ } 
+ 
+ 
+	</style>
+<header class="l-header fixed-top">
+	<nav class="navbar">
+		<label><img src="logo.png" width="35" height="35"><a href="#" class="logo" style="color: #000; margin-left: 7px;">IdGame</a></label>
+		<ul id="navbar" class="nav ">
+            <div>
+                <li class="nav_item"><a href="#">Beranda</a></li>
+            <li class="nav_item"><a href="#">Game</a>
+                <i class='bx bxs-chevron-down'></i>
+                <ul class="dropdown">
+                    <li><a href="">Shuttle</a></li>
+                    <li><a href="">Tetris</a></li>
+                </ul>
+            </li>
+            <li class="nav_item"><a href="#">Login</a></li>
+            <li class="nav_item"><a href="#" class="l">Contact Us</a></li>
+            </div>
+			
+		</ul>
+		<div class="toggle">
+			<i class='bx bx-menu' style="font-size: 1.6rem;"></i>
+		</div>
+		
+	</nav>
+</header>
+    <link rel="icon"href="Logo.png">
+</head>
+<body>
+    <div id="BtnTop"><a href="#"><img src="https://img.icons8.com/color/48/000000/whatsapp.png"/></a></div>
+   <br>
+   <div class="up" id="up">
+ <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="foto.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="foto2.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>  
+    </div>
+ 
+<main  class="1-main">
+    <section class="do"><br><br>
+    <h3 style="text-align: center;">What We Do</h3>
+        <div class="card5" style="width: 18rem;">
+    <img src="foto3.png" width="120" height="100" style="display: block;margin: auto;">
+  <div class="card-body">
+    <h5 class="card-title">Game</h5>
+    <p class="card-text">IdGame also made several games that are still in progress or release.Games made by IdGame are not small. We will release a new game</p>
+  </div>
+</div>
+  
+        <div class="card1" style="width: 18rem;">
+    <img src="komunitas.png" width="120" height="100" style="display: block;margin: auto;">
+  <div class="card-body">
+    <h5 class="card-title">Comunity</h5>
+    <p class="card-text">There are not as many members of the IdGame Community as other community members. But we are sure that our community in the future will increase members and develop well.</p>
+  </div>
+</div>
+<section>
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="game.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Shuttle</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="tetris.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Trits</h5>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</section>
+<section class="we_do">
+    <h4 class="section-title" style="font-size: 1.4rem;">Game</h4>
+    <div class="card2" style="width: 18rem;">
+        <div class="galery">
+             <img src="game.png" class="card-img-top" alt="...">
+        </div>
+  <div class="card-body">
+    <h5 class="card-title">Shuttle</h5>
+    <p class="card-text">This game tells of a shuttle that eradicates allien before coming to earth.</p>
+   
+  </div>
+</div>
+<div class="card3" style="width: 18rem;">
+    <div class="galery">
+          <img src="tetris.png" class="card-img-top" alt="...">    
+    </div>
+  <div class="card-body">
+    <h5 class="card-title">Trist</h5>
+    <p class="card-text">This game is inspired by Tetris game. But in the future this game will be better than the original Tetris.</p>
+    
+  </div>
+</div>
+<div class="card4" style="width: 18rem;">
+    <div class="galery">
+        <img src="online.png" class="card-img-top" alt="...">
+    </div>
+  <div class="card-body">
+    <h5 class="card-title">Online Game</h5>
+    <p class="card-text">This game is in progress or release.
+This game can be played with friends online.</p>
+  </div>
+</div>
+</section>
+	</section>
+    <section class="about section" id="about">
+        <h5 class="section-title">About Us</h5>
+        <div class="about_container bd-grid">
+            <div class="about_img">
+                <img src="backgroud.png" >
+            </div>
+
+            <div>
+                <h2 class="about_subtitle">IdGame</h2>
+                <p class="about_text"  style="margin-bottom: 20px;">IdGame is a community engaged in IT and game developers. IdGame focuses on Create games or game developers.IdGame also consists of Indonesian youth</p>
+            </div>
+
+        </div>
+    </section>
+    <section class="contact section" id="contact">
+        <div class="contact_container bd-grid">
+            
+            <div>
+                <h2 class="contact_subtitle" style="margin-bottom: 20px;">Contact</h2>
+                <p class="contact_text"  style="margin-bottom: 30px; ">For more details, please contact<a href="https://mail.google.com/mail/u/4/?ogbl#inbox"> idgame497@gmail.com </a> ,Or you can also contact</p>
+                <div class="contact_icon" style="display: inline-block;"><a href=""><i class='bx bxl-instagram' ></i></a></div>
+                <div class="contact_icon" style="display: inline-block; margin-left: 18px; "><a href=""><i class='bx bxl-facebook-circle' ></i></a></div>
+                <div class="contact_icon" style="display: inline-block; margin-left: 18px; "><a href=""><i class='bx bxl-github'></i></a></div>
+            </div>
+            <div class="contact_img">
+                <img src="contact.png" >
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<div class="footer1">
+<div class="footer_img" style="display: inline-block;"><br><img src="logo1.png" width="120" height="120" style="margin-left: 30px; margin-bottom: 20px; ">
+
+</div>
+<div style="display: inline-block;" class="list1">
+    <label class="title1" style="margin-left: 50px; font-size: 1.2rem; font-family: sans-serif;">Home</label>
+    <ul>
+        <li style="list-style-type: none; " ><i class='bx bxs-chevron-right'></i><a href="#" style="color: #fff;">About Us</a></li> 
+        <li style="list-style-type: none;"><i class='bx bxs-chevron-right'></i><a href="#" style="color: #fff;">Login</a></li>
+        <li style="list-style-type: none;"><i class='bx bxs-chevron-right'></i><a href="#" style="color: #fff;">Register</a></li>
+       
+    </ul>
+</div>
+    <div style="display: inline-block;"  class="list2">
+        <label class="title1" style="margin-left: 50px; font-size: 1.2rem; font-family: sans-serif;">Game</label>
+    <ul>
+        <li style="list-style-type: none;" ><i class='bx bxs-chevron-right'></i><a href="#" style="color: #fff;">Shuttle</a></li> 
+        <li style="list-style-type: none;"><i class='bx bxs-chevron-right'></i><a href="#" style="color: #fff;">Trits</a></li>
+        <li style="list-style-type: none;"><i class='bx bxs-chevron-right'></i><a href="#" style="color: #fff;">Online Game</a></li>
+    </ul>
+    </div>
+    <div style="display: inline-block;" class="list1">
+    <label class="title1" style="margin-left: 50px; font-size: 1.2rem; font-family: sans-serif;">Teach</label>
+    <ul>
+        <li style="list-style-type: none; " ><i class='bx bxs-chevron-right'></i><a href="#" style="color: #fff;">Python</a></li> 
+        <li style="list-style-type: none;"><i class='bx bxs-chevron-right'></i><a href="#" style="color: #fff;">C++</a></li>
+        <li style="list-style-type: none;"><i class='bx bxs-chevron-right'></i><a href="#" style="color: #fff;">Java</a></li>
+       
+    </ul>
+</div>
+ <div style="display: inline-block;" class="list1">
+    <label class="title1" style="margin-left: 50px; font-size: 1.2rem; font-family: sans-serif;">Latest</label>
+    <ul>
+        <li style="list-style-type: none; " ><i class='bx bxs-chevron-right'></i><a href="" style="color: #fff;">Game</a></li> 
+        <li style="list-style-type: none;"><i class='bx bxs-chevron-right'></i><a href="#" style="color: #fff;">Member</a></li>
+        <li style="list-style-type: none;"><i class='bx bxs-chevron-right'></i><a href="#" style="color: #fff;">development</a></li>
+       
+    </ul>
+</div><br>
+    <hr  style="font-size: 1.3rem; color: #fff; font-weight: bold;"/>
+
+    
+    <div style="" class="footer2">
+        <i class="copy" style="margin-left: 10px;">Copyrigth &#169; 2020 All rights reserved IdGame</i>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".toggle").click(function(){
+    $('#navbar').slideToggle(5000);
+  });
+  $(".nav_item").click(function(){
+   $('#navbar').hide(5000);
+  });
+});
+</script>
+</body>
+</html><html>
 <head>
 	<title>Tes</title>
 </head>
